@@ -6,7 +6,7 @@ library(TSA)
 library(zoo)
 
 # Import and explore the data
-Mtraf <- read_excel('/Users/vincent/Desktop/MSC AIBA/UE 1 - Analytical Theory and Methods/1.2 time_series/Avion/marseille-1982-2016.xls', sheet = "marseille")
+Mtraf <- read_excel('marseille-1982-2016.xls', sheet = "marseille")
 str(Mtraf)
 summary(Mtraf)
 
@@ -135,7 +135,7 @@ pred2019 <- predict(mod3, n.ahead=36, newxreg=matrix(0, nrow = 36, ncol = ncol(d
 ts.plot(traf, 2.718^pred2019$pred, log="y", lty=c(1,3))
 
 # Import Marseille airport data for 2017-2019
-Mtraf2 <- read_excel('/Users/vincent/Desktop/MSC AIBA/UE 1 - Analytical Theory and Methods/1.2 time_series/Avion/marseille-2017-2019.xlsx', sheet = "Feuil1")
+Mtraf2 <- read_excel('marseille-2017-2019.xlsx', sheet = "Feuil1")
 
 # Transform it into a time series
 Mtraf2 <- ts(Mtraf2[,3], start=c(2017,1), frequency=12)
